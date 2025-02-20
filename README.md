@@ -40,7 +40,8 @@ This project is licensed under the ISC License.
 
 ## Contributors
 
-- [Your Name]
+- Adit
+- Himanshu
 
 ## Contact
 
