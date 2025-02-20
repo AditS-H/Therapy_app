@@ -15,7 +15,7 @@ module.exports.post_therepist_register = (req, res, next) => {
                 if (req.body.pass == req.body.confpass) {
                     const otp = Math.floor(1000 + Math.random() * 9000);
                     req.body.otp = otp;
-                    const url = `https://www.fast2sms.com/dev/bulkV2?authorization=Fyd2YXghDJznir8tGCjKf5aT0skNSQ3b6AMZEe9U7mlVWxRBPw7BLQTYprtGHUe3XxVJ0hR5kSvniKqP&route=otp&variables_values=${otp}&flash=0&numbers=${req.body.tel}`;
+                    const url = `https://www.fast2sms.com/dev/bulkV2?authorization=${process.env.FAST2SMS_API_KEY}&route=otp&variables_values=${otp}&flash=0&numbers=${req.body.tel}`;
                     let response = await axios.get(url);
                     // console.log(response.data);
                     res.cookie("otp", JSON.stringify(req.body));
